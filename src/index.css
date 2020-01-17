@@ -6,6 +6,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: url("./images/bg.png") no-repeat center;
+  background-size: cover;
+  height: 100vh;
 }
 
 code {
@@ -13,13 +16,22 @@ code {
     monospace;
 }
 
+.main-container {
+  display: flex;
+  max-width: 1200px;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+/* ==== BOARD ==== */
 .board {
   width: 500px;
   height: 500px;
   border: 5px groove grey;
   margin: auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
 .box {
@@ -32,7 +44,25 @@ code {
   border: 1px solid white;
 }
 
+.box.EMPTY {
+  background: url("./images/water.png") no-repeat center;
+  background-size: cover;
+}
+.box.SHIP {
+  background: url("./images/ship.png") no-repeat center;
+  background-size: cover;
+}
+
 .box:hover {
-  background-color: darkblue;
   cursor: pointer;
+}
+
+/* ==== PLAYERS ==== */
+.playerPane {
+  height: min-content;
+  margin: 0 4rem;
+  background-color: #ddd;
+  background-color: aquamarine;
+  border: 2px solid grey;
+  padding: 1rem;
 }
